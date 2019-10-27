@@ -1,3 +1,4 @@
-simpleitk
+SimpleITK
 numpy
 scipy
+Pillow
