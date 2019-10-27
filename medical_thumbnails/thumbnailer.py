@@ -9,11 +9,13 @@ import numpy as np
 
 def convert_to_8bit(img_array):
     """Converts to 8 bit, but strething the contrast according to image stats"""
+    img_array = img_array.astype('float32')
     int_quant = mquantiles(img_array.ravel(), [0.01, 0.99])
 
     # if the image is flat return the image or 255
     if int_quant[0] == int_quant[1]:
-        return np.min(img_array.max(), 255)
+        flat_field = np.min(img_array.max(), 255)
+        return flat_field*np.ones_like(img_array)
     # Remove outliers
     img_array[img_array < int_quant[0]] = int_quant[0]
     img_array[img_array > int_quant[1]] = int_quant[1]
@@ -55,6 +57,7 @@ def save_thumbnail(img, out_fname, size):
 def build_parser():
     """ Builds the argument parser """
     parser = argparse.ArgumentParser()
+    parser.description = "Generate PNG thumbnails from medical images"
     parser.add_argument("inp", help="input filename")
     parser.add_argument("out", help="output filename")
     parser.add_argument("size", help="size of the output", type=int)
