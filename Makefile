@@ -3,7 +3,7 @@ THUMB_FOLDER:=${HOME}/.local/share/thumbnailers
 MIME:=${HOME}/.local/share/mime
 
 install: clean_cache
-	pip install -r requirements.txt
+	pip3 install -r requirements.txt
 	cp ${CURDIR}/medical_thumbnails/thumbnailer.py ${DEST}/medical_thumbnailer
 	mkdir -p ${MIME}/packages/
 	cp ${CURDIR}/medical_thumbnails/nii.xml ${MIME}/packages/
