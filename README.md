@@ -25,4 +25,8 @@ and launch
 
 ```sudo make install```.
 
+Remember to restart all nautilus instances, you can do it via:
+
+``` nautilus -q ``` 
+
 In case it doesn't work or if you have any suggestion, feel free to open an issue.
