@@ -4,6 +4,14 @@
 
 A thumbnailer for medical images preview in gnome files (nautilus).
 
+## Requirements
+Before installing the package, make sure you have make and pip3.
+On ubuntu:
+
+```sudo apt install make python3-pip```
+
+On fedora substitute apt with dnf.
+
 ## Installation
 To install this tool, clone the repository:
 
