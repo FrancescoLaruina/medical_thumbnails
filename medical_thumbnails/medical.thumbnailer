@@ -1,0 +1,5 @@
+[Thumbnailer Entry]
+TryExec=medical_thumbnailer
+Exec=medical_thumbnailer %i %o %s
+MimeType=application/dicom;
+

@@ -1,8 +1,9 @@
-#!/bin/env python3
+#!/usr/bin/env python3
 """ Utilities to manage medical images and extract a preview """
 import argparse
 
 import PIL
+import PIL.Image
 import SimpleITK as sitk
 from scipy.stats.mstats import mquantiles
 import numpy as np
@@ -35,7 +36,7 @@ def load_image(path):
     Returns:
         Image -- a pillow Image
     """
-    img_array = sitk.GetArrayFromImage(sitk.ReadImage(path))
+    img_array = sitk.GetArrayFromImage(sitk.ReadImage(path)).squeeze()
     if img_array.ndim == 3:
         img_array = img_array[:, :, img_array.shape[-1]//2].squeeze()
     img_array = convert_to_8bit(img_array)
