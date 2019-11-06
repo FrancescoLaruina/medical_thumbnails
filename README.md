@@ -1,4 +1,7 @@
 # Medical thumbnailer
+
+[![Build Status](https://travis-ci.org/FrancescoLaruina/medical_thumbnails.svg?branch=master)](https://travis-ci.org/FrancescoLaruina/medical_thumbnails)
+
 A thumbnailer for medical images preview in gnome files (nautilus).
 
 ## Installation
